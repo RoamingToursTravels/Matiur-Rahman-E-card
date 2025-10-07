@@ -840,7 +840,7 @@ body {
     transition: opacity 0.3s ease;
 }
 
-/* ===== CONTACT WHITE TEXT STYLES ===== */
+/* ===== CONTACT WHITE TEXT STYLES FOR IPHONE ===== */
 .contact-white-text,
 .contact-white-text:link,
 .contact-white-text:visited,
@@ -851,36 +851,22 @@ body {
     -webkit-text-fill-color: white !important;
     -webkit-appearance: none !important;
     -webkit-tap-highlight-color: transparent !important;
+    font-weight: 400 !important;
 }
 
-.contact-white-text:hover {
+.contact-white-text:hover,
+.contact-white-text:focus {
     opacity: 0.8;
     transition: opacity 0.3s ease;
+    color: white !important;
+    -webkit-text-fill-color: white !important;
 }
 
-/* iPhone specific styling */
+/* iPhone specific fixes */
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
     .contact-white-text {
         color: white !important;
         -webkit-text-fill-color: white !important;
-        -webkit-text-stroke: 0.5px white !important;
-    }
-}
-
-/* Additional mobile styling for better visibility */
-@media (max-width: 768px) {
-    .contact-white-text {
-        color: white !important;
-        -webkit-text-fill-color: white !important;
-        font-weight: 500 !important;
-    }
-    
-    .ecard-contact {
-        margin-bottom: 0.5rem;
-    }
-    
-    .ecard-contact a {
-        color: white !important;
-        -webkit-text-fill-color: white !important;
+        -webkit-text-stroke: 0.5px white;
     }
 }
