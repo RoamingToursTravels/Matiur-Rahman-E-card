@@ -228,42 +228,67 @@ body.dark-mode .ecard-employee-id {
     transition: opacity 0.3s ease;
 }
 
-/* ===== BUTTON STYLES ===== */
+/* ===== BUTTON STYLES - iOS DESIGN SPECIFICATIONS ===== */
 .ecard-save-btn, .ecard-social-btn {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     color: white;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 
+        0 4px 16px rgba(0, 0, 0, 0.12),
+        0 2px 8px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .ecard-save-btn:hover, .ecard-social-btn:hover {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
-    transform: translateY(-2px);
-    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1));
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: 
+        0 8px 24px rgba(0, 0, 0, 0.15),
+        0 4px 12px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.ecard-save-btn:active, .ecard-social-btn:active {
+    transform: translateY(0) scale(0.98);
+    transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.1),
+        0 1px 4px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 .ecard-save-btn {
     display: block;
     width: 100%;
     text-align: center;
-    border-radius: 50px;
-    padding: 14px 30px;
+    border-radius: 14px;
+    padding: 16px 32px;
     font-size: 1.1rem;
     font-weight: 600;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
+    min-height: 50px;
+    position: relative;
+    overflow: hidden;
 }
 
 .ecard-social-btn {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    font-size: 1.6rem;
-    margin: 0 12px;
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    font-size: 1.7rem;
+    margin: 0 8px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
 }
 
 /* Prevent blue link colors for social buttons in Safari */
@@ -275,6 +300,34 @@ body.dark-mode .ecard-employee-id {
     text-decoration: none !important;
     -webkit-text-fill-color: white !important;
     -webkit-appearance: none !important;
+}
+
+/* ===== WHATSAPP BUTTON - iOS STYLE ===== */
+.ecard-social-btn.whatsapp-btn {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    border: 1px solid rgba(37, 211, 102, 0.3);
+    box-shadow: 
+        0 4px 16px rgba(37, 211, 102, 0.25),
+        0 2px 8px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.ecard-social-btn.whatsapp-btn:hover {
+    background: linear-gradient(135deg, #2EE371, #25D366);
+    transform: translateY(-1px) scale(1.05);
+    box-shadow: 
+        0 8px 24px rgba(37, 211, 102, 0.35),
+        0 4px 12px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.ecard-social-btn.whatsapp-btn:active {
+    background: linear-gradient(135deg, #1DA851, #128C7E);
+    transform: translateY(0) scale(0.98);
+    box-shadow: 
+        0 2px 8px rgba(37, 211, 102, 0.2),
+        0 1px 4px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 /* ===== FOOTER STYLES ===== */
@@ -862,11 +915,182 @@ body {
     -webkit-text-fill-color: white !important;
 }
 
+/* ===== SAFARI & iOS SPECIFIC OPTIMIZATIONS ===== */
+
 /* iPhone specific fixes */
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
     .contact-white-text {
         color: white !important;
         -webkit-text-fill-color: white !important;
         -webkit-text-stroke: 0.5px white;
+    }
+}
+
+/* Safari button optimizations */
+.ecard-save-btn, .ecard-social-btn {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform, box-shadow;
+}
+
+/* iOS Safari viewport fixes */
+@supports (-webkit-touch-callout: none) {
+    .ecard-container {
+        -webkit-overflow-scrolling: touch;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    
+    .ecard-save-btn, .ecard-social-btn {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+}
+
+/* iOS specific button improvements */
+@media screen and (max-width: 768px) {
+    .ecard-save-btn {
+        min-height: 44px;
+        font-size: 1rem;
+        padding: 14px 28px;
+    }
+    
+    .ecard-social-btn {
+        width: 48px;
+        height: 48px;
+        font-size: 1.5rem;
+        margin: 0 6px;
+    }
+    
+    .ecard-social-btn.whatsapp-btn {
+        min-width: 48px;
+        min-height: 48px;
+    }
+}
+
+/* Safari-specific backdrop filter fallback */
+@supports not (backdrop-filter: blur(20px)) {
+    .ecard-save-btn, .ecard-social-btn {
+        background: rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .ecard-social-btn.whatsapp-btn {
+        background: rgba(37, 211, 102, 0.9);
+    }
+}
+
+/* iOS Dark Mode support */
+@media (prefers-color-scheme: dark) {
+    .ecard-save-btn, .ecard-social-btn {
+        border-color: rgba(255, 255, 255, 0.3);
+    }
+}
+
+/* iOS accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    .ecard-save-btn, .ecard-social-btn {
+        transition: none;
+    }
+    
+    .ecard-save-btn:hover, .ecard-social-btn:hover {
+        transform: none;
+    }
+    
+    .ecard-save-btn:active, .ecard-social-btn:active {
+        transform: none;
+    }
+}
+
+/* ===== iOS DEVICE SPECIFIC OPTIMIZATIONS ===== */
+
+/* iPhone SE (375px) and smaller */
+@media screen and (max-width: 375px) {
+    .ecard-save-btn {
+        font-size: 0.9rem;
+        padding: 12px 24px;
+        min-height: 44px;
+    }
+    
+    .ecard-social-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 1.3rem;
+        margin: 0 4px;
+    }
+    
+    .ecard-container {
+        padding: 15px;
+    }
+}
+
+/* iPhone 12/13/14 (390px) */
+@media screen and (min-width: 376px) and (max-width: 430px) {
+    .ecard-save-btn {
+        font-size: 1rem;
+        padding: 14px 28px;
+        min-height: 44px;
+    }
+    
+    .ecard-social-btn {
+        width: 48px;
+        height: 48px;
+        font-size: 1.5rem;
+        margin: 0 6px;
+    }
+}
+
+/* iPhone 14 Plus/Pro Max (428px) and larger */
+@media screen and (min-width: 431px) and (max-width: 768px) {
+    .ecard-save-btn {
+        font-size: 1.1rem;
+        padding: 16px 32px;
+        min-height: 48px;
+    }
+    
+    .ecard-social-btn {
+        width: 52px;
+        height: 52px;
+        font-size: 1.6rem;
+        margin: 0 8px;
+    }
+}
+
+/* iPad and larger screens */
+@media screen and (min-width: 769px) {
+    .ecard-save-btn {
+        font-size: 1.2rem;
+        padding: 18px 36px;
+        min-height: 50px;
+    }
+    
+    .ecard-social-btn {
+        width: 56px;
+        height: 56px;
+        font-size: 1.8rem;
+        margin: 0 10px;
+    }
+}
+
+/* iOS Safari specific viewport handling */
+@supports (-webkit-touch-callout: none) and (orientation: portrait) {
+    .ecard-container {
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+    }
+}
+
+@supports (-webkit-touch-callout: none) and (orientation: landscape) {
+    .ecard-container {
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+    }
+    
+    .ecard-save-btn, .ecard-social-btn {
+        margin: 8px 4px;
     }
 }
