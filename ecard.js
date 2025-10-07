@@ -14,19 +14,33 @@ const ANIMATION = {
 };
 
 // ===== CONTACT MANAGEMENT =====
+// Contact Information - MD Matiur Rahman
+const CONTACT_INFO = {
+    name: 'MD Matiur Rahman',
+    organization: 'Roaming Tours & Travels',
+    title: 'Chairman',
+    officePhone: '+880 1799-987000',
+    personalPhone: '+880 1329-739726',
+    email: 'robin@roamingbd.com',
+    secondaryEmail: '',
+    website: 'https://www.roamingbd.com',
+    address: 'House-25 (2nd Floor), Road-02, Sector-03, opposite of Shopno, Rajlokkhi, Uttara, Dhaka, Bangladesh',
+    whatsappNumber: '8801329739726'
+};
+
 /**
  * Generates and downloads a vCard contact file, with an improved method for iOS.
  */
 function saveContact() {
-    const name = 'MD Samrat Hossain';
-    const organization = 'Roaming Tours & Travels';
-    const title = 'Sr. Executive-Visa';
-    const officePhone = '01329739731';
-    const personalPhone = '01738738637';
-    const email = 'roamingbdvisa01@gmail.com';
-    const secondaryEmail = '';
-    const website = 'https://www.roamingbd.com';
-    const address = 'House-25 (2nd Floor), Road-02, Sector-03, opposite of Shopno, Rajlokkhi, Uttara, Dhaka, Bangladesh';
+    const name = CONTACT_INFO.name;
+    const organization = CONTACT_INFO.organization;
+    const title = CONTACT_INFO.title;
+    const officePhone = CONTACT_INFO.officePhone;
+    const personalPhone = CONTACT_INFO.personalPhone;
+    const email = CONTACT_INFO.email;
+    const secondaryEmail = CONTACT_INFO.secondaryEmail;
+    const website = CONTACT_INFO.website;
+    const address = CONTACT_INFO.address;
 
     const nameParts = name.split(' ');
     const lastName = nameParts.pop() || '';
@@ -83,7 +97,7 @@ END:VCARD`;
  * Opens WhatsApp chat with predefined message
  */
 function openWhatsApp() {
-    const whatsappNumber = '8801329739731';
+    const whatsappNumber = CONTACT_INFO.whatsappNumber;
     const message = 'Hello! I found your contact through your digital business card.';
     
     try {

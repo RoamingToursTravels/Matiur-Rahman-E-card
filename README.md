@@ -63,7 +63,7 @@ Update social media profiles in `config.json`:
   "social": {
     "linkedin": "https://linkedin.com/in/yourprofile",
     "facebook": "https://facebook.com/yourprofile",
-    "github": "https://github.com/yourusername",
+    
     "portfolio": "https://yourportfolio.com",
     "whatsappNumber": "your-whatsapp-number"
   }
@@ -189,7 +189,6 @@ const ECARD_CONFIG = {
 For questions or support, contact:
 - **Email:** mskamranroamingbd@gmail.com
 - **LinkedIn:** [M S Kamran](https://www.linkedin.com/in/mskamran23/)
-- **GitHub:** [MS-Kamran](https://github.com/MS-Kamran)
 
 ## 📄 License
 
