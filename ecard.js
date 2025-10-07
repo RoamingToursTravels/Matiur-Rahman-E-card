@@ -19,7 +19,7 @@ const CONTACT_INFO = {
     name: 'MD Matiur Rahman',
     organization: 'Roaming Tours & Travels',
     title: 'Chairman',
-    officePhone: '+880 1799-987000',
+    officePhone: '+8801711313339',
     personalPhone: '+880 1329-739726',
     email: 'robin@roamingbd.com',
     secondaryEmail: '',
