@@ -822,3 +822,20 @@ body {
         margin-top: 0.5rem;
     }
 }
+
+/* ===== FOOTER WHITE TEXT STYLES ===== */
+.footer-white-text,
+.footer-white-text:link,
+.footer-white-text:visited,
+.footer-white-text:hover,
+.footer-white-text:active {
+    color: white !important;
+    text-decoration: none !important;
+    -webkit-text-fill-color: white !important;
+    -webkit-appearance: none !important;
+}
+
+.footer-white-text:hover {
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
