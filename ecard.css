@@ -246,7 +246,25 @@ body.dark-mode .ecard-employee-id {
     user-select: none;
 }
 
-.ecard-save-btn:hover, .ecard-social-btn:hover {
+.ecard-save-btn:hover {
+    background: linear-gradient(135deg, 
+        rgba(173, 216, 230, 0.4), 
+        rgba(135, 206, 235, 0.3), 
+        rgba(176, 224, 230, 0.35),
+        rgba(173, 216, 230, 0.25)
+    );
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 
+        0 15px 45px rgba(173, 216, 230, 0.3),
+        0 8px 25px rgba(135, 206, 235, 0.2),
+        0 4px 12px rgba(176, 224, 230, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4),
+        inset 0 -1px 0 rgba(173, 216, 230, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 1);
+}
+
+.ecard-social-btn:hover {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1));
     transform: translateY(-1px) scale(1.02);
     box-shadow: 
@@ -255,7 +273,24 @@ body.dark-mode .ecard-employee-id {
         inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
-.ecard-save-btn:active, .ecard-social-btn:active {
+.ecard-save-btn:active {
+    background: linear-gradient(135deg, 
+        rgba(173, 216, 230, 0.25), 
+        rgba(135, 206, 235, 0.15), 
+        rgba(176, 224, 230, 0.2),
+        rgba(173, 216, 230, 0.1)
+    );
+    transform: translateY(-1px) scale(0.99);
+    transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 
+        0 6px 20px rgba(173, 216, 230, 0.2),
+        0 3px 10px rgba(135, 206, 235, 0.1),
+        0 1px 4px rgba(176, 224, 230, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2),
+        inset 0 -1px 0 rgba(173, 216, 230, 0.15);
+}
+
+.ecard-social-btn:active {
     transform: translateY(0) scale(0.98);
     transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     box-shadow: 
@@ -265,17 +300,53 @@ body.dark-mode .ecard-employee-id {
 }
 
 .ecard-save-btn {
+    background: linear-gradient(135deg, 
+        rgba(173, 216, 230, 0.3), 
+        rgba(135, 206, 235, 0.2), 
+        rgba(176, 224, 230, 0.25),
+        rgba(173, 216, 230, 0.15)
+    );
+    backdrop-filter: blur(25px) saturate(180%);
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 
+        0 8px 32px rgba(173, 216, 230, 0.2),
+        0 4px 16px rgba(135, 206, 235, 0.15),
+        0 2px 8px rgba(176, 224, 230, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -1px 0 rgba(173, 216, 230, 0.2);
     display: block;
     width: 100%;
     text-align: center;
-    border-radius: 14px;
+    border-radius: 20px;
     padding: 16px 32px;
     font-size: 1.1rem;
     font-weight: 600;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.5px;
     min-height: 50px;
     position: relative;
     overflow: hidden;
+}
+
+.ecard-save-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.2), 
+        transparent
+    );
+    transition: left 0.6s ease;
+}
+
+.ecard-save-btn:hover::before {
+    left: 100%;
 }
 
 .ecard-social-btn {
@@ -302,32 +373,77 @@ body.dark-mode .ecard-employee-id {
     -webkit-appearance: none !important;
 }
 
-/* ===== WHATSAPP BUTTON - iOS STYLE ===== */
+/* ===== WHATSAPP BUTTON - Liquid Glass Water Theme ===== */
 .ecard-social-btn.whatsapp-btn {
-    background: linear-gradient(135deg, #25D366, #128C7E);
-    border: 1px solid rgba(37, 211, 102, 0.3);
+    background: linear-gradient(135deg, 
+        rgba(37, 211, 102, 0.4), 
+        rgba(18, 140, 126, 0.3), 
+        rgba(46, 227, 113, 0.35),
+        rgba(37, 211, 102, 0.25)
+    );
+    backdrop-filter: blur(25px) saturate(180%);
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
+    border: 1px solid rgba(37, 211, 102, 0.5);
     box-shadow: 
-        0 4px 16px rgba(37, 211, 102, 0.25),
-        0 2px 8px rgba(0, 0, 0, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        0 8px 32px rgba(37, 211, 102, 0.25),
+        0 4px 16px rgba(18, 140, 126, 0.2),
+        0 2px 8px rgba(46, 227, 113, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -1px 0 rgba(37, 211, 102, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.ecard-social-btn.whatsapp-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.3), 
+        transparent
+    );
+    transition: left 0.6s ease;
+}
+
+.ecard-social-btn.whatsapp-btn:hover::before {
+    left: 100%;
 }
 
 .ecard-social-btn.whatsapp-btn:hover {
-    background: linear-gradient(135deg, #2EE371, #25D366);
-    transform: translateY(-1px) scale(1.05);
+    background: linear-gradient(135deg, 
+        rgba(46, 227, 113, 0.5), 
+        rgba(37, 211, 102, 0.4), 
+        rgba(18, 140, 126, 0.45),
+        rgba(46, 227, 113, 0.35)
+    );
+    transform: translateY(-2px) scale(1.08);
     box-shadow: 
-        0 8px 24px rgba(37, 211, 102, 0.35),
-        0 4px 12px rgba(0, 0, 0, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        0 12px 40px rgba(37, 211, 102, 0.35),
+        0 6px 20px rgba(18, 140, 126, 0.25),
+        0 3px 10px rgba(46, 227, 113, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4),
+        inset 0 -1px 0 rgba(37, 211, 102, 0.3);
+    border-color: rgba(37, 211, 102, 0.6);
 }
 
 .ecard-social-btn.whatsapp-btn:active {
-    background: linear-gradient(135deg, #1DA851, #128C7E);
-    transform: translateY(0) scale(0.98);
+    background: linear-gradient(135deg, 
+        rgba(29, 168, 81, 0.35), 
+        rgba(18, 140, 126, 0.25), 
+        rgba(37, 211, 102, 0.3),
+        rgba(29, 168, 81, 0.2)
+    );
+    transform: translateY(0) scale(1.02);
     box-shadow: 
-        0 2px 8px rgba(37, 211, 102, 0.2),
-        0 1px 4px rgba(0, 0, 0, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        0 4px 16px rgba(37, 211, 102, 0.2),
+        0 2px 8px rgba(18, 140, 126, 0.15),
+        0 1px 4px rgba(29, 168, 81, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2),
+        inset 0 -1px 0 rgba(37, 211, 102, 0.15);
 }
 
 /* ===== FOOTER STYLES ===== */
